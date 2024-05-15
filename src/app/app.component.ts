@@ -7,8 +7,8 @@ import { DynamicComponent } from "./dynamic.component";
   template: `
     <h1>Welcome to {{ title }}!</h1>
 
-    <button (click)="loadComponent()">Load Component</button>
-    <button (click)="unloadComponent()">Unload Component</button>
+    <button (click)="loadComponent()">Create Component</button>
+    <button (click)="unloadComponent()">Remove Component</button>
 
     <!-- @if (condition()) { -->
     <div class="some-design">
