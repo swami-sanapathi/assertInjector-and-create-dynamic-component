@@ -1,17 +1,43 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, ViewChild, ViewContainerRef, inject, signal } from "@angular/core";
+import { DynamicComponent } from "./dynamic.component";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   standalone: true,
-  imports: [RouterOutlet],
   template: `
-    <h1>Welcome to {{title}}!</h1>
+    <h1>Welcome to {{ title }}!</h1>
 
-    <router-outlet />
+    <button (click)="loadComponent()">Load Component</button>
+    <button (click)="unloadComponent()">Unload Component</button>
+
+    <!-- @if (condition()) { -->
+    <div class="some-design">
+      <ng-template #loadDyn></ng-template>
+    </div>
+    <!-- } -->
   `,
-  styles: [],
+  styles: `
+    .some-design {
+      background-color: red;
+      color: white;
+      padding: 10px;
+    }
+  `,
 })
 export class AppComponent {
-  title = 'create-dynamic-component';
+  protected condition = signal(false);
+  protected title = "Creating Dynamic Component";
+
+   @ViewChild("loadDyn", { read: ViewContainerRef }) viewContainerRef!: ViewContainerRef;
+
+  loadComponent() {
+    this.condition.set(true);
+    this.viewContainerRef?.clear();
+    this.viewContainerRef.createComponent(DynamicComponent);
+  }
+
+  unloadComponent() {
+    this.viewContainerRef.clear();
+    this.condition.set(false);
+  }
 }
