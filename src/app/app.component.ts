@@ -5,7 +5,7 @@ import { DynamicComponent } from "./dynamic.component";
   selector: "app-root",
   standalone: true,
   template: `
-    <h1>Welcome to {{ title }}!</h1>
+    <h1>{{ title }}!</h1>
 
     <button (click)="loadComponent()">Create Component</button>
     <button (click)="unloadComponent()">Remove Component</button>
