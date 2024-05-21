@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MonacoEditorModule, NGX_MONACO_EDITOR_CONFIG } from 'ngx-monaco-editor-v2';
+
 declare let monaco: any;
 
 @Component({
@@ -90,5 +91,10 @@ export class MonacoEditorComponent {
                 return { suggestions: suggestions };
             },
         });
+        monaco.editor.create({ model: this.code, theme: 'myCoolTheme' }, {
+            value: this.code,
+            language: 'mySpecialLanguage',
+            theme: 'myCoolTheme',
+        })
     }
 }
