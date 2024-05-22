@@ -7,4 +7,4 @@ import { MonacoEditorComponent } from './monaco-editor.component';
     template: ` <app-monaco-editor /> `,
     imports: [MonacoEditorComponent],
 })
-export class DynamicComponent {}
+export default class DynamicComponent {}

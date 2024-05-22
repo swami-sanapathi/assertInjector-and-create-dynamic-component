@@ -52,6 +52,7 @@ export class MonacoEditorComponent {
             ],
             colors: {
                 'editor.foreground': '#000000',
+                'editor.background': '#ffffff',
             },
         });
 
@@ -91,10 +92,5 @@ export class MonacoEditorComponent {
                 return { suggestions: suggestions };
             },
         });
-        monaco.editor.create({ model: this.code, theme: 'myCoolTheme' }, {
-            value: this.code,
-            language: 'mySpecialLanguage',
-            theme: 'myCoolTheme',
-        })
     }
 }

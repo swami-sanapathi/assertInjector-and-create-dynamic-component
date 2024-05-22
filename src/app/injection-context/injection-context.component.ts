@@ -13,7 +13,7 @@ import {
     standalone: true,
     template: ` Some Content`,
 })
-export class InjectionContextComponent implements OnInit {
+export default class InjectionContextComponent implements OnInit {
     injector = inject(Injector);
     constructor() {
         console.log(assertInjector(addFnToken));
