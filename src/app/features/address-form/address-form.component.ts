@@ -26,7 +26,7 @@ import { Router } from '@angular/router';
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 40vh;
             background-color: #f0f0f0;
             padding: 100px;
         }
