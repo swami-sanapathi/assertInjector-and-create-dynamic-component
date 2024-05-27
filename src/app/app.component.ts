@@ -71,7 +71,7 @@ import { Router, RouterOutlet } from '@angular/router';
     imports: [RouterOutlet],
 })
 export class AppComponent {
-    protected title = signal('Welcome to Angular 18!!!!');
+    protected title = signal('Welcome to Angular!!!!');
     protected subTitle = signal<string | null>(null);
 
     private readonly router = inject(Router);
